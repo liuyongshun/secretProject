@@ -1,0 +1,192 @@
+.firstBox {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 0.26rem;
+  overflow: hidden;
+}
+
+.menuBox {
+  position: relative;
+  width: 55.2%;
+  margin: 0.2rem auto;
+  padding: 2px;
+  border: 1px solid #d4d4d4;
+  border-radius: 66px;
+  overflow: hidden;
+}
+
+.menuBox ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  font-size: 0.28rem;
+}
+
+.menuBox ul li {
+  width: 50%;
+  height: 0.62rem;
+  line-height: 0.65rem;
+  text-align: center;
+  color: #888;
+}
+
+.menuBox ul li.liactive {
+  color: #212121;
+  background-color: #ffda44;
+  border-bottom: none;
+  border-radius: 66px;
+}
+
+.contentBox {
+  height: 88%;
+  width: 100%;
+  margin-top: 1.14rem;
+  overflow-y:  auto;
+  overflow-x:  hidden;
+  position: relative
+}
+
+.tab-box {
+  width: 200%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  -webkit-box-align: center;
+  left: 0;
+  top: 0;
+  -webkit-transition:all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tab-item {
+  position: relative;
+  width: 100%;
+}
+
+.tab-item {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* nav */
+.l-nav-icon {
+  height: 0.48rem;
+  width: auto;
+}
+.tabbar-txt {
+  color: #666;
+}
+/* main */
+.l-fixed-bg {
+  background: url(../images/bg.png) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+.l-wrap-box {
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0 0.26rem;
+  width: 100%;
+  overflow: hidden;
+}
+.l-fixed-box {
+  position: relative;
+  width: 100%;
+}
+.l-right-func {
+  width: 0.5rem;
+  float: right;
+  margin-top: .34rem;
+}
+
+/* tab content */
+.l-list-item {
+  margin-bottom: 0.1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.l-item-header {
+  padding: 0.14rem 0.12rem;
+  color: #fff;
+  line-height: 0.5rem;
+  text-align: left;
+  background-color: #373751;
+}
+.l-status,
+.l-title,
+.l-password {
+    display: inline-block;
+    vertical-align: middle;
+}
+.l-status {
+  padding: 0.04rem 0.22rem 0;
+  font-size: 0.28rem;
+  border-radius: 50px;
+}
+.l-title {
+  width: 55%;
+  margin-left: 0.07rem;
+  font-size: 0.26rem;
+}
+.l-password {
+  width: 0.18rem;
+  margin: 0 0.34rem 0 0.16rem;
+}
+.l-game-logo {
+  display: block;
+  float: right;
+  width: 0.7rem;
+}
+.l-fight-player {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction:normal;
+  -webkit-box-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  position: relative;
+}
+.l-fixed-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -0.22rem;
+  padding: 0.06rem 0.08rem 0.08rem;
+  font-size: 0.2rem;
+  color: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.l-player-msg {
+  padding-top: 0.24rem;
+  font-size: 0.2rem;
+  color: #888;
+}
+.l-player-msg li {
+  margin-bottom: 0.24rem;
+}
+.l-avator {
+  display: block;
+  width: 0.76rem;
+  margin: 0 0.3rem;
+}
+.l-gold-icon {
+  position: absolute;
+  right: 0.2rem;
+  width: 0.36rem;
+}
