@@ -32,6 +32,7 @@
 #myIndex .myIndexRows .rightImg { height : 0.22rem ; width: 0.13rem ; margin : 0.33rem 0.3rem 0 0;}
 #myIndex .myIndexRows .ulName { font-size: 0.3rem ; margin-left : 0.34rem ;}
 #myIndex .myIndexRows .bottomBorder{ border-bottom: 1px solid #d4d4d4 ; float: right ; width: 90% ; height: 0.89rem ;}
+#myIndex .myIndexRows .gameName { margin-right: 0.21rem ; }
 #myIndex .borderNone .bottomBorder { border : none;}
 #myIndex .bottomDol {border-bottom: 12px solid #f5f5f5 ;}
 #myIndex .bottomDol .bottomBorder { border-bottom: none ; }
