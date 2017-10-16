@@ -1,3 +1,60 @@
+
+
+/*图片100%*/
+.isImg {width : 100% ; height : 100% ; display: block ;}
+/*清除浮动*/
+.clearFix:after { content: ""; height: 0; line-height: 0; display: block; visibility: hidden; clear: both; }
+/*左右浮动*/
+.isRight { float: right ;}
+.isLeft { float: left ; }
+/*文本左右居中*/
+.isTextRight { text-align: right ;}
+.isTextLeft { text-align: left ; }
+.isTextCenter { text-align: center ; }
+/*图片文字相对居中*/
+.isVerMid { vertical-align: middle ; }
+/**/
+.isInLineBlock { display: inline-block ; }
+/*footer Fixed*/
+/*.commonFooter{position: fixed ; bottom: 0 ;}*/
+/*myIndex*/
+#myIndex .myIndexHeader { height : 3rem ; background: #000000 ; width : 100% ; display: block ;  color : #fff ; }
+#myIndex .myIndexHeader .myIndexHeadPor{ margin : 0.27rem auto ; height : 1.11rem ; width: 1.11rem ;}
+#myIndex .myIndexHeader .myIndexUserName { margin : 0 auto 0.2rem; display: block ; text-align: center ;}
+#myIndex .myIndexHeader .myIndexUserName #userName { display: inline-block ; vertical-align: middle ; font-size: 0.3rem ;}
+#myIndex .myIndexHeader .myIndexUserName #userGrade { width : 0.62rem ; height : 0.3rem ; display: inline-block ; vertical-align: middle ; }
+#myIndex .myIndexHeader .diamondsNum { margin-left : 1rem ; }
+#myIndex .myIndexHeader .moneyNum .moneyImg { width : 0.28rem ; height : 0.28rem ; vertical-align: middle ;}
+#myIndex .myIndexHeader .moneyNum span { vertical-align: middle ;}
+#myIndex .g-scrollview { margin-top : 0 ;}
+#myIndex .myIndexRows { height : 0.89rem ; line-height: 0.89rem ; display: block ; background: #fff ;}
+#myIndex .myIndexRows .ulImg { height : 0.36rem ; width : 0.36rem ; margin-left : 0.33rem ; vertical-align: middle ;}
+#myIndex .myIndexRows .rightImg { height : 0.22rem ; width: 0.13rem ; margin : 0.33rem 0.3rem 0 0;}
+#myIndex .myIndexRows .ulName { font-size: 0.3rem ; margin-left : 0.34rem ;}
+#myIndex .myIndexRows .bottomBorder{ border-bottom: 1px solid #d4d4d4 ; float: right ; width: 90% ; height: 0.89rem ;}
+#myIndex .borderNone .bottomBorder { border : none;}
+#myIndex .bottomDol {border-bottom: 12px solid #f5f5f5 ;}
+#myIndex .bottomDol .bottomBorder { border-bottom: none ; }
+#myIndex .myIndexRows .leftImg{ float: left ; width: 10% ; }
+#myIndex .litImg .ulImg img { width: 88% ; }
+#myIndex .g-scrollview { overflow: hidden ;}
+
+
+/*个人信息*/
+#myIndexPerIn .box { margin-top : 0.12rem ; }
+#myIndexPerIn .cell-arrow:after { color : #888888 ; }
+#myIndexPerIn .cell-item div { font-size: 0.28rem ; }
+#myIndexPerIn .cell-item .cell-left { color : #8f8f8f ; }
+#myIndexPerIn .cell-item .cell-right { color : #333; padding-right : 0 ;}
+#myIndexPerIn .cell-item #nickName{ padding-right : 0.4rem ;}
+#myIndexPerIn .m-cell:after { border-bottom : none ;}
+#myIndexPerIn .cell-item .myRightImg{ width: 0.13rem ; height: 0.22rem ; margin : 0.39rem 0.3rem 0 0.33rem ;}
+
+
+
+
+
+
 .firstBox {
   box-sizing: border-box;
   position: relative;
