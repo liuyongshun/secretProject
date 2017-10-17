@@ -39,7 +39,7 @@
 #myIndex .myIndexRows .leftImg{ float: left ; width: 10% ; }
 #myIndex .litImg .ulImg img { width: 88% ; }
 #myIndex .g-scrollview { overflow: hidden ;}
-
+#myIndex .myIndexFixed { position: absolute ; width: 100% ; }
 
 /*个人信息*/
 #myIndexPerIn .box { margin-top : 0.12rem ; }
