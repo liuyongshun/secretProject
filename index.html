@@ -11,10 +11,11 @@
   <meta name="format-detection" content="telephone=no" />
   <link rel="stylesheet" href="css/ydui.css" />
   <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="./js/ydui.flexible.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <!-- <script src="js/footer.js"></script> -->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -472,9 +473,47 @@
         </div>
       </div>
     <!-- tab shop -->
-    <div class="g-scrollview hide">
-      module 3
-    </div>
+      <div class="g-scrollview hide">
+          <div id="shoppingMall">
+              <div class="mallBackground">
+                  <div class="turntable">
+                    <div class="shopPointer" >
+                      <img src="./images/shopPointer.png" alt="">
+                    </div>
+                  </div>
+              </div>
+            <div class="isTextCenter money">50金币/次</div>
+            <div class="titleText">
+              <div class="yellow"><img src="./images/yellow.png" alt=""></div>
+              <div style="display: inline-block">虚拟皮肤</div>
+            </div>
+
+            <div class="swiper-container">
+              <div class="swiper-wrapper boxRows">
+                <div class="swiper-slide boxes">
+                  <div class="img"></div>
+                  <div class="goodsName">限量守望先锋限量守望先锋限量守望先锋</div>
+                  <div class="goodsPrice">577700<div class="dw"><img src="./images/gold.png" alt=""></div></div>
+                </div>
+                <div class="swiper-slide boxes">
+                  <div class="img"></div>
+                  <div class="goodsName">限量守望先锋</div>
+                  <div class="goodsPrice">577700<div class="dw"><img src="./images/isMoney.png" alt=""></div></div>
+                </div>
+                <div class="swiper-slide boxes">
+                  <div class="img"></div>
+                  <div class="goodsName">限量守望先锋</div>
+                  <div class="goodsPrice">577700<div class="dw"><img src="./images/isMoney.png" alt=""></div></div>
+                </div>
+                <div class="swiper-slide boxes">
+                  <div class="img"></div>
+                  <div class="goodsName">限量守望先锋</div>
+                  <div class="goodsPrice">577700<div class="dw"><img src="./images/isMoney.png" alt=""></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     <!-- tab mine -->
     <div class="g-scrollview hide"  id="myIndex">
       <section class="g-flexview myIndexFixed">
@@ -623,15 +662,20 @@
    function getFocus (arg) {
      if (arg === 0) {
        $icon.eq(0).attr('src', './images/event_hill.png');
+       document.title = '约战';
      }
      if (arg === 1) {
        $icon.eq(1).attr('src', './images/ranking_hill.png');
+       document.title = '排行';
      }
      if (arg === 2) {
        $icon.eq(2).attr('src', './images/shop_hill.png');
+       document.title = '商城';
+
      }
      if (arg === 3) {
        $icon.eq(3).attr('src', './images/my_hill.png');
+       document.title = '我的';
      }
    }
 
@@ -647,6 +691,107 @@
    $icon.removeClass('active');
    $(this).find('img').addClass('active');
  })
+
+
+//    加载图片滚动
+   var swiper = new Swiper('.swiper-container', {
+       paginationClickable: true,
+       spaceBetween: 0,
+       loop: false,
+       slidesPerView : 'auto',
+   });
+   //转盘
+
+   function turntableDraw(obj,jsn)
+   {
+       "use strict";
+       this.draw = {};
+       this.draw.obj = $(obj);
+       this.draw.objClass = $(obj).attr("class");
+       this.draw.newClass = "rotary"+"new"+parseInt(Math.random()*1000);
+       var _jiaodu = parseInt(360/jsn.share);
+       var _yuan = 360*(jsn.weeks || 4);
+       var _str = "";
+       var _speed = jsn.speed || "2s";
+       var _velocityCurve = jsn.velocityCurve || "ease";
+       var _this = this;
+       for(var i=1;i<=jsn.share;i++)
+       {
+           _str+="."+this.draw.newClass+i+"{";
+           _str+="transform:rotate("+((i-1)*_jiaodu+_yuan)+"deg);";
+           _str+="-ms-transform:rotate("+((i-1)*_jiaodu+_yuan)+"deg);";
+           _str+="-moz-transform:rotate("+((i-1)*_jiaodu+_yuan)+"deg);";
+           _str+="-webkit-transform:rotate("+((i-1)*_jiaodu+_yuan)+"deg);";
+           _str+="-o-transform:rotate("+((i-1)*_jiaodu+_yuan)+"deg);";
+           _str+="transition: transform "+_speed+" "+_velocityCurve+";";
+           _str+="-moz-transition: -moz-transform "+_speed+" "+_velocityCurve+";";
+           _str+="-webkit-transition: -webkit-transform "+_speed+" "+_velocityCurve+";";
+           _str+="-o-transition: -o-transform "+_speed+" "+_velocityCurve+";";
+           _str+="}";
+           _str+="."+this.draw.newClass+i+"stop{";
+           _str+="transform:rotate("+((i-1)*_jiaodu)+"deg);";
+           _str+="-ms-transform:rotate("+((i-1)*_jiaodu)+"deg);";
+           _str+="-moz-transform:rotate("+((i-1)*_jiaodu)+"deg);";
+           _str+="-webkit-transform:rotate("+((i-1)*_jiaodu)+"deg);";
+           _str+="-o-transform:rotate("+((i-1)*_jiaodu)+"deg);";
+           _str+="}";
+       };
+       $(document.head).append("<style>"+_str+"</style>");
+       _speed = _speed.replace(/s/,"")*1000;
+       this.draw.startTurningOk = false;
+       this.draw.goto=function(ind){
+           if(_this.draw.startTurningOk){return false};
+           _this.draw.obj.attr("class",_this.draw.objClass+" "+_this.draw.newClass+ind);
+           _this.draw.startTurningOk = true;
+           setTimeout(function(){
+               _this.draw.obj.attr("class",_this.draw.objClass+" "+_this.draw.newClass+ind+"stop");
+               if(jsn.callback)
+               {
+                   _this.draw.startTurningOk = false;
+                   jsn.callback(ind);
+               };
+           },_speed+10);
+           return _this.draw;
+       };
+       return this.draw;
+   };
+
+   function callbackA(ind)
+   {
+       alert("第一个回调"+ind);
+   };
+   function callbackB(ind)
+   {
+       alert("第二个回调"+ind);
+   };
+   var newdraw =new turntableDraw('.shopPointer img',{
+       share:8,
+       speed:"3s",
+       velocityCurve:"ease",
+       weeks:6,
+       callback:function(num)
+       {
+           callbackA(num);
+       },
+   });
+   var newdraw2 =new turntableDraw('.drawBtn2',{
+       share:12,
+       speed:"3s",
+       velocityCurve:"ease",
+       weeks:6,
+       callback:function(num)
+       {
+           callbackB(num);
+       },
+   });
+   $(".shopPointer img").click(function(event) {
+       //ajax
+       newdraw.goto(parseInt(Math.random()*8)+1);
+   });
+   $(".shopPointer img").click(function(event) {
+       //ajax
+       newdraw2.goto(parseInt(Math.random()*12)+1);
+   });
   </script>
 </body>
 

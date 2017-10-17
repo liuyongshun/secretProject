@@ -86,11 +86,20 @@
 #task .taskLastText { height: 1.4rem ; margin:0 0.43rem ; padding : 0.36rem 0 ;}
 
 
-
-
-
-
-
+    /*商城*/
+#shoppingMall .mallBackground { background: url("../images/shopBack.png") ; height : 6.18rem ; background-size : 100% 100%;}
+#shoppingMall .turntable { background: #fff ; width: 5.6rem ; height: 5.6rem ; margin: 0 auto ; border-radius: 100% ; position: relative ; top : 0.2rem ; border : 0.2rem solid #f1f1f1 ;}
+#shoppingMall .shopPointer { height: 1.71rem ; width: 1.5rem ; margin : 0 auto ; position: relative ; top : 1.7rem ;}
+#shoppingMall .money { margin : 0.21rem auto 0.21rem; }
+#shoppingMall .titleText { margin-bottom : 0.35rem ;}
+#shoppingMall .yellow { margin-left : 0.1rem ; width : 0.1rem ; height : 0.3rem ; margin-right : 0.1rem ; display : inline-block ;  vertical-align: sub ;}
+#shoppingMall .boxRows { width: 100% ;  }
+#shoppingMall .boxRows .boxes { width: 2.5rem ; height: 3.44rem ;float: left ; margin-right : 0.1rem ;}
+#shoppingMall .boxRows .boxes .img { width: 100% ; height : 2.5rem ; background: #f2f2f2 ; }
+#shoppingMall .swiper-container { margin-left: 0.3rem ;}
+#shoppingMall .goodsName{overflow:hidden;text-overflow:ellipsis; width: 100% ; white-space: nowrap;}
+#shoppingMall .goodsName , #shoppingMall .goodsPrice { margin-left : 0.06rem ; }
+#shoppingMall .goodsPrice .dw { width : 0.28rem ; height : 0.28rem ; display: inline-block ; vertical-align: sub ; position: relative ;  margin-left : 0.1rem ;}
 .firstBox,.secondBox {
   box-sizing: border-box;
   position: relative;
