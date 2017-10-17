@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>任务</title>
+    <meta name="keywords" content="王者荣耀" />
+    <meta name="description" content="约战" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/ydui.css" />
+    <link rel="stylesheet" href="css/public.css">
+    <script src="./js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{background: #f5f5f5 ;}
+    </style>
+</head>
+<body id="task">
+    <div class="m-cell box">
+        <div class="taskTitle">
+            每日任务
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_1.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">每日登录</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myFinishImg"><img src="./images/finishTask.png" alt=""></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_2.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">赢取一次约战比赛</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 15</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_3.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">邀请好友注册（<span id="inNum">2/5</span>）</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 30</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item" style="border-bottom: none;">
+            <div class="cell-left taskImg"><img src="./images/task_4.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">分享约战比赛到朋友圈（<span id="fxNum">2/5</span>）</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div style="width: 100% ; height : 0.11rem ; background: #f5f5f5 ;"></div>
+        <div class="taskTitle">
+            新手任务
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_wx.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">绑定微信</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 10</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_5.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">绑定QQ</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 10</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_6.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">绑定游戏角色</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 10</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left taskImg"><img src="./images/task_7.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">创建约战比赛</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 20</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cell-item" style="border-bottom: none;">
+            <div class="cell-left taskImg"><img src="./images/task_8.png" alt=""></div>
+            <div class="cell-left taskText">
+                <div class="taskItem">首次充值成功</div>
+                <div class="taskItem">奖励：
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/isMoney.png" alt=""></div>
+                        <span class="fontSize firstNume">+ 100</span>
+                    </div>
+                    <div class="taskRows">
+                        <div class="isMoney"><img src="./images/gold.png" alt=""></div>
+                        <span class="fontSize">+ 20</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right "></div>
+            <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div style="width: 100% ; height : 0.11rem ; background: #f5f5f5 ;"></div>
+        <div class="taskTitle">
+            做任务的好处
+        </div>
+        <div class="taskLastText">
+            完成任务是最稳定的获取金币与钻石途径，您可以在个人中心的 我的任务查看当当天还能完成的任务
+        </div>
+    </div>
+</body>
+</html>

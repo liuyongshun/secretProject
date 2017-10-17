@@ -10,59 +10,163 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" href="css/ydui.css" />
     <link rel="stylesheet" href="css/public.css">
-    <link rel="stylesheet" href="css/main.css">
     <script src="./js/ydui.flexible.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="./js/ydui.citys.js"></script>
+    <script src="./js/ydui.js"></script>
+    <script src="./js/mobiscroll.custom-2.5.2.min.js"></script>
+    <link rel="stylesheet" href="./css/mobiscroll.custom-2.5.2.min_my.css"/>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <style>
     body{background: #f5f5f5;}
 </style>
 <body id="myIndexPerIn">
     <div class="m-cell box">
-        <a class="cell-item">
+        <div class="cell-item">
             <div class="cell-left">昵称</div>
             <div class="cell-right" id="nickName">皮皮不皮</div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item" id="sex">
             <div class="cell-left">性别</div>
             <div class="cell-right"><span>男</span></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item" id="">
+            <label for="appDateTime" class="apTime"></label>
             <div class="cell-left">出生日期</div>
-            <div class="cell-right "><span>1900 08 20</span></div>
+            <div class="cell-right "><input id="appDateTime" name="appDateTime" /></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+
+        </div>
+        <div class="cell-item">
+            <label for="addressBtn"></label>
             <div class="cell-left">所在省份</div>
-            <div class="cell-right "><span>福建 厦门市</span></div>
+            <div class="cell-right "><input style="text-align: right" type="text" readonly id="addressBtn" name="addressBtn" placeholder="请选择收货地址" value=""></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item" id="universities">
             <div class="cell-left">所在高校</div>
             <div class="cell-right "><span>厦门大学</span></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item" id="wx">
             <div class="cell-left">绑定微信号</div>
             <div class="cell-right "><span>CH.ZHONG</span></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item" id="qq">
             <div class="cell-left">绑定QQ号</div>
             <div class="cell-right "><span>123456</span></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item">
             <div class="cell-left">支付密码</div>
             <div class="cell-right "></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
-        <a class="cell-item">
+        </div>
+        <div class="cell-item">
             <div class="cell-left">收货地址</div>
             <div class="cell-right "></div>
             <div class="right myRightImg"><img src="./images/right.png" alt=""></div>
-        </a>
+        </div>
     </div>
+    <!--储存性别-->
+    <input type="hidden" value="" id="cSex">
+    <script src="./js/ydui.js"></script>
+    <script>
+
+        !function (win, $) {
+            var dialog = win.YDUI.dialog;
+            //       选择性别
+            $('#sex').on('click', function () {
+                dialog.confirm('请选择性别', '<div class="sex"><input type="button" onclick="chooseSexZ(this)" value="男" class="sexZ"/></div><div class="sex"><input type="button" onclick="chooseSexO(this)" value="女" class="sexO"/></div><div class="clearFix"></div>', function () {
+                    var sexId = $("#cSex").val();
+                    dialog.toast('成功', 'none', 1000);
+                });
+            });
+            //       所在高校
+            $('#universities').on('click', function () {
+                dialog.confirm('请输入高校名称', '<div class="universities"><input type="text"/></div>', function () {
+                    var sexId = $(".universities input").val();
+                    dialog.toast('成功', 'none', 1000);
+                });
+            });
+//            绑定微信号
+            $('#wx').on('click', function () {
+                dialog.confirm('请输入微信号', '<div class="wx"><input type="text"/></div>', function () {
+                    var sexId = $(".wx input").val();
+                    dialog.toast('成功', 'none', 1000);
+                });
+            });
+//            绑定QQ号
+            $('#qq').on('click', function () {
+                dialog.confirm('请输入QQ号', '<div class="qq"><input type="tel"/></div>', function () {
+                    var sexId = $(".qq input").val();
+                    dialog.toast('成功', 'none', 1000);
+                });
+            });
+        }(window, jQuery);
+        function chooseSexZ(index){
+            $(index).addClass("active");
+            $(".sexO").removeClass("active");
+            $("#cSex").val("0")
+        }
+        function chooseSexO(index){
+            $(index).addClass("active");
+            $(".sexZ").removeClass("active");
+            $("#cSex").val("1")
+        }
+
+//        选择出生日期
+        (function ($) {
+            $.mobiscroll.i18n.zh = $.extend($.mobiscroll.i18n.zh, {
+                dateFormat: 'yyyy-mm-dd',
+                dateOrder: 'yymmdd',
+                dayNames: ['周日', '周一;', '周二;', '周三', '周四', '周五', '周六'],
+                dayNamesShort: ['日', '一', '二', '三', '四', '五', '六'],
+                dayText: '日',
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                monthText: '月',
+                timeFormat: 'HH:ii',
+                timeWheels: 'HHii',
+                yearText: '年'
+            });
+        })(jQuery);
+        $(function () {
+            var currYear = (new Date()).getFullYear();
+            var opt={};
+            opt.date = {preset : 'date'};
+            opt.datetime = {preset : 'datetime'};
+            opt.time = {preset : 'time'};
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                lang:'zh',
+                startYear:1900, //开始年份
+                endYear:currYear//结束年份
+            };
+            var optDateTime = $.extend(opt['date'], opt['default'])
+            var optTime = $.extend(opt['time'], opt['default']);
+            $("#appDateTime").mobiscroll(optDateTime);
+        });
+//        选择所在省份
+        var $target = $('#addressBtn');
+
+        $target.citySelect({
+            provance: '',
+            city: '',
+        });
+
+        $target.on('click', function () {
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city  + ' ' + ret.area);
+        });
+    </script>
 </body>
 </html>
